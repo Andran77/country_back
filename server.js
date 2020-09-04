@@ -1247,7 +1247,7 @@ const server = http.createServer((req, res)=>{
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(country)
+    res.end("hello world")
 });
 
 server.listen(port, hostname, () => {
