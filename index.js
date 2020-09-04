@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const hostname = '127.0.0.1';
 const port = 3000;
-const country = [
+const country = JSON.stringify([
     {
         name: 'Afghanistan',
         dialCode: '93',
@@ -1239,7 +1239,7 @@ const country = [
         dialCode: '263',
         code: 'ZW'
     }
-];
+]);
 
 const server = http.createServer((req, res)=>{
     console.log(req.url);
@@ -1247,7 +1247,7 @@ const server = http.createServer((req, res)=>{
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(country))
+    res.end(country)
 });
 
 server.listen(port, hostname, () => {
