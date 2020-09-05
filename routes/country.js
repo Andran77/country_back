@@ -1241,7 +1241,7 @@ const country = [
 ];
 
 router.get('', (req, res, next) => {
-    res.status(200).json(JSON.stringify(country));
+    res.status(200).json(country);
 });
 
 router.get('/:id', (req, res, next) => {
