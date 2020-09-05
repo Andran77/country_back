@@ -1241,7 +1241,7 @@ const country = [
 ];
 
 router.get('', (req, res, next) => {
-  res.status(200).json(country);
+  res.status(200).json({ test: 'test'});
 });
 
 module.exports = router
