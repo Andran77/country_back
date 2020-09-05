@@ -1241,7 +1241,17 @@ const country = [
 ];
 
 router.get('', (req, res, next) => {
-  res.status(200).json(JSON.stringify(country));
+    res.status(200).json(JSON.stringify(country));
 });
+
+router.get('/:id', (req, res, next) => {
+    const pageCountry = country.slice((req.params.id-1)*10, req.params.id*10);
+    console.log(pageCountry, 'chunkCountry');
+    res.status(200).json({
+        page_number: req.params.id,
+        all_countrys: country.length,
+        page_country: pageCountry
+    })
+})
 
 module.exports = router
