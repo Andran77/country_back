@@ -1249,4 +1249,9 @@ router.get('/:id', (req, res, next) => {
     res.status(200).json(pageCountry);
 })
 
+router.get('/country/:id', (req, res, next) => {
+    const selectedCountry = country[req.params.id];
+    res.status(200).json(selectedCountry)
+})
+
 module.exports = router
